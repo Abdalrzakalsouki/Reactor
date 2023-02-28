@@ -1,0 +1,209 @@
+@use "./variables" as V;
+@use "./mixins" as MX;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  font-size: V.$fs-body;
+}
+
+h1 {
+  font-size: V.$fs-title;
+}
+h2 {
+  font-size: calc(V.$fs-title - 3px);
+}
+
+p {
+  font-size: V.$fs-body;
+}
+.content {
+  @include MX.flex-X;
+  margin-top: 50px;
+}
+
+#title {
+  @include MX.title-center;
+  color: V.$main-color;
+}
+
+.blog-list {
+  padding: 20px;
+  margin: 50px;
+  box-shadow: 0px 0px 6px 0px;
+  border-radius: 15px;
+  h2 {
+    color: V.$main-color;
+  }
+  a {
+    color: V.$secondry-color;
+  }
+  p:nth-of-type(1) {
+    font-weight: bold;
+  }
+  p:nth-of-type(2) {
+    line-height: 1.5;
+  }
+  p:last-of-type {
+    color: V.$main-color;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+p {
+  margin-top: 10px;
+}
+
+.navbar {
+  @include MX.flex-X;
+  padding: 30px;
+  background-color: V.$nav-color;
+  border-bottom: 2px solid V.$secondary-2-color;
+  margin: 0 auto;
+  color: V.$secondary-2-color;
+  ul {
+    margin-left: auto;
+    a {
+      padding: 6px;
+      color: V.$secondary-2-color;
+      margin-left: 16px;
+      &:hover {
+        font-weight: bold;
+        color: V.$main-color;
+      }
+    }
+  }
+}
+
+.create {
+  width: 50%;
+  form {
+    @include MX.flex-Y;
+
+    h1 {
+      color: V.$main-color;
+      margin-bottom: 20px;
+    }
+    label {
+      font-size: 14px;
+    }
+    input,
+    textarea {
+      padding: 15px;
+      margin-block: 20px;
+      box-shadow: 0 0 15px 4px rgb(0 0 0 / 6%);
+      border: 0;
+      border-radius: 15px;
+      resize: vertical;
+      width: 60%;
+      background-color: rgba(247, 214, 0, 0.62);
+    }
+    button {
+      @include MX.button;
+      background-color: V.$main-color;
+      color: V.$button-text-color;
+      max-width: 90%;
+      margin-top: 20px;
+    }
+  }
+}
+
+.details {
+  h1 {
+    color: V.$main-color;
+    @include MX.title-center;
+  }
+
+  button {
+    @include MX.button;
+    @include MX.flex-X;
+    background-color: V.$main-color;
+    color: V.$button-text-color;
+    width: 35%;
+  }
+}
+
+.about {
+  h1 {
+    @include MX.title-center;
+    color: V.$main-color;
+  }
+  article {
+    margin-top: 20px;
+    text-align: center;
+    p {
+      margin-bottom: 10px;
+    }
+    a {
+      padding: 10px;
+      color: V.$main-color;
+    }
+  }
+}
+
+.not-found {
+  @include MX.flex-Y;
+  h1 {
+    color: V.$main-color;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .navbar {
+    @include MX.flex-Y;
+    h1 {
+      margin-bottom: 10px;
+    }
+    ul {
+      margin: 0;
+      a {
+        padding: 0;
+      }
+    }
+  }
+  .about {
+    article {
+      p {
+        margin-bottom: 15px;
+        padding-inline: 5px;
+      }
+    }
+  }
+  .details {
+    button {
+      font-size: 10px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  .create {
+    width: 100%;
+    form {
+      input,
+      textarea {
+        width: 80%;
+      }
+      button {
+        font-size: 10px;
+        padding: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@mixin flex-X {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-Y {
+  @include flex-X;
+  flex-direction: column;
+}
+
+@mixin button {
+  border: none;
+  outline: none;
+  padding: 20px;
+  margin: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+@mixin title-center {
+  margin: auto;
+  text-align: center;
+}
