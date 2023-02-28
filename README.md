@@ -7,7 +7,6 @@ Reactor, an app built using react and Vite
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [Setup](#setup)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -29,10 +28,6 @@ Users should be able to:
 
 ![](./src/assets/Post%20Reacting.png)
 
-### Links
-
-- Solution URL: ()
-- Live Site URL: ()
 
 ## Setup
 
